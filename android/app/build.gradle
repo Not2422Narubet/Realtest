@@ -135,6 +135,14 @@ android {
         if (project.ext.react.enableFlipper) {
             debug.java.srcDirs += "src/flipper/java"
         }
+
+        // TODO: Remove this block when we drop support for 0.67.
+        // https://github.com/facebook/react-native/commit/ce74aa4ed335d4c36ce722d47937b582045e05c4
+        if (getReactNativeVersionNumber(rootDir) < 6800) {
+            main.java.srcDirs += "src/reactinstanceeventlistener-pre-0.68/java"
+        } else {
+            main.java.srcDirs += "src/reactinstanceeventlistener-0.68/java"
+        }
     }
 }
 

@@ -16,3 +16,6 @@ MTL_FAST_MATH = YES
 SDKROOT = iphoneos
 SWIFT_TREAT_WARNINGS_AS_ERRORS = YES
 WARNING_CFLAGS = -Wall
+OTHER_CFLAGS = $(inherited) -fstack-protector-strong -fPIE -Wformat -Wformat-security -Werror=format-security
+OTHER_LDFLAGS = $(inherited) -fstack-protector-strong -fPIE -pie -Wformat -Wformat-security -Werror=format-security
+
